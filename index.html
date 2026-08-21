@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Sivam Digital Studio & Frame Works | Ramanathapuram</title>
+  <meta name="title" content="Sivam Digital Studio & Frame Works | Ramanathapuram" />
+  <meta name="description" content="Sivam Digital Studio & Frame Works at Kenikarai Bus Stop, Ramanathapuram. Professional wedding photography, luxury album making, customized gifts and photo frames." />
+  <meta name="keywords" content="Sivam Digital, Sivam Digital Studio & Frame Works, Kenikarai Bus Stop, Ramanathapuram Photography, Wedding Photography, Luxury Album Making, Customized Gifts, Photo Frames" />
+  <meta name="author" content="Sivam Digital Studio & Frame Works" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sivamdigital.com/" />
+  <meta property="og:title" content="Sivam Digital Studio & Frame Works | Ramanathapuram" />
+  <meta property="og:description" content="Kenikarai Bus Stop, Ramanathapuram. Creating beautiful wedding memories, luxury album making and personalized gifts." />
+  <meta property="og:image" content="./assets/hero_wedding.jpg" />
+
+  <!-- Google Fonts: Cinzel, Cormorant Garamond, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- React & ReactDOM CDN for Standalone Support -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="./src/index.css" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PhotographyBusiness",
+    "name": "Sivam Digital Studio & Frame Works",
+    "image": "https://sivamdigital.com/public/assets/logo.jpg",
+    "description": "Professional studio in Ramanathapuram specializing in wedding photography, luxury album making, customized gifts and premium photo frames.",
+    "telephone": "+918110860283",
+    "email": "sivamdigitalrmd@gmail.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kenikarai Bus Stop",
+      "addressLocality": "Ramanathapuram",
+      "addressRegion": "Tamil Nadu",
+      "postalCode": "623501",
+      "addressCountry": "IN"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "09:00",
+      "closes": "21:00"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- Main Application Script -->
+  <script type="text/babel">
+    const { useState, useEffect, useRef } = React;
+
+    // CENTRALIZED CONFIGURATION FOR SIVAM DIGITAL STUDIO & FRAME WORKS
+    const siteConfig = {
+      businessName: "Sivam Digital",
+      businessFullTitle: "Sivam Digital Studio & Frame Works",
+      tagline: "Capture Your Moments. Create Your Memories.",
+      subTagline: "Creating beautiful wedding memories, luxury album making and personalized gifts with 5 years of experience.",
+      
+      contact: {
+        phonePrimaryDisplay: "+91 81108 60283",
+        phoneSecondaryDisplay: "+91 95666 78255",
+        phoneDisplay: "+91 81108 60283 / +91 95666 78255",
+        phoneRaw: "+918110860283",
+        phoneSecondaryRaw: "+919566678255",
+        whatsappDisplay: "+91 81108 60283",
+        whatsappRaw: "918110860283",
+        email: "sivamdigitalrmd@gmail.com",
+        address: "Kenikarai Bus Stop, Ramanathapuram, Tamil Nadu, India",
+        workingHours: "Mon - Sun: 9:00 AM - 9:00 PM"
+      },
+
+      logoImg: "./assets/logo.jpg",
+
+      social: {
+        instagram: "https://www.instagram.com/ramnad_gifts?igsi=MWY3a3BqbndwMXZ4Ng==",
+        facebook: "https://facebook.com/sivamdigital",
+        youtube: "https://youtube.com/sivamdigital",
+        whatsapp: "https://wa.me/918110860283"
+      },
+
+      highlights: [
+        { label: "5+ Years Experience" },
+        { label: "1000+ Successful Weddings" },
+        { label: "Personalized Service" }
+      ],
+
+      stats: [
+        { number: 5, suffix: "+", label: "Years of Experience", desc: "Years of professional understanding in studio & album designing" },
+        { number: 1000, suffix: "+", label: "Weddings Successfully Completed", desc: "Trusted by hundreds of happy families across regions" },
+        { number: 1000, suffix: "+", label: "Happy Memories Created", desc: "Cherished moments preserved with extreme perfection" },
+        { number: 5, suffix: "+", label: "Years of Professional Expertise", desc: "Mastery in photography, album making & framing" }
+      ],
+
+      whyChooseUs: [
+        { num: "01", icon: "award", title: "5+ Years Experience", description: "Years of practical experience and professional understanding of studio, framing and wedding requirements." },
+        { num: "02", icon: "heart-handshake", title: "1000+ Successful Weddings", description: "Trusted by hundreds of families to preserve their most important celebrations." },
+        { num: "03", icon: "camera", title: "Professional Quality", description: "Attention to detail, creative presentation and high-quality finishing." },
+        { num: "04", icon: "user-check", title: "Personalized Service", description: "Every customer receives solutions tailored to their needs and occasion." },
+        { num: "05", icon: "gift", title: "Customized Gifts", description: "Beautiful personalized gifts created specially for your loved ones." },
+        { num: "06", icon: "image", title: "Premium Photo Frames", description: "Transform your favorite memories into elegant, professionally finished photo frames." }
+      ],
+
+      services: [
+        { id: "wedding-photo", title: "Wedding Photography", category: "Weddings", description: "Comprehensive coverage of your special day capturing authentic emotions, rituals, and elegance.", image: "./assets/service_wedding_stage.jpg" },
+        { id: "wedding-video", title: "Wedding Videography", category: "Weddings", description: "Cinematic wedding films that recreate the romance, sound, and soul of your wedding day.", image: "./assets/service_candid.jpg" },
+        { id: "album-making", title: "Luxury Album Making", category: "Albums", description: "Flush mount leather, acrylic glass cover & non-tearable synthetic HD wedding photobooks.", image: "./assets/album_3.jpg" },
+        { id: "candid-photo", title: "Candid Photography", category: "Weddings", description: "Unscripted, raw emotional moments captured naturally without intrusive posing.", image: "./assets/service_candid_real.jpg" },
+        { id: "traditional-photo", title: "Traditional Photography", category: "Weddings", description: "Timeless ritual and stage family coverage adhering strictly to cultural customs.", image: "./assets/service_traditional.jpg" },
+        { id: "customized-gifts", title: "Customized Gifts", category: "Gifts", description: "Personalized keepsakes, custom photo plaques, printed mugs, and memory boxes.", image: "./assets/service_gifts.jpg" },
+        { id: "customized-frames", title: "Customized Photo Frames", category: "Frames", description: "Handcrafted wooden, acrylic floating, and gold filigree frames to showcase your cherished photos.", image: "./assets/service_frames.jpg" },
+        { id: "invitation-making", title: "Invitation Making", category: "Invitations", description: "Luxury digital & printed wedding invitation cards with gold foil embossing, wax seals & royal aesthetic designs.", image: "./assets/service_invitation.jpg" },
+        { id: "pre-wedding", title: "Pre-Wedding Photography", category: "Weddings", description: "Creative outdoor & romantic conceptual photo shoots ahead of your grand celebration.", image: "./assets/service_prewedding.png" },
+        { id: "studio-services", title: "Professional Studio Services", category: "Studio", description: "In-studio portraits, digital retouching, restoration, and instant print services.", image: "./assets/service_studio.jpg" }
+      ],
+
+      customizedGiftsList: [
+        { title: "Our Love Story Acrylic Timeline LED Light", desc: "Illuminated acrylic timeline frame featuring your love journey photos & milestone dates.", image: "./assets/gift_3.png" },
+        { title: "3D Desktop Couple Cutout Plaque", desc: "Personalized desktop 3D couple cutout plaque with solid wooden base.", image: "./assets/gift_4.jpg" },
+        { title: "Illuminated Heart Acrylic LED Light Frame", desc: "Custom illuminated heart acrylic photo frame with ambient color lights.", image: "./assets/gift_8_heart_led.png" },
+        { title: "Accordion Photo Reel Memory Heart Box", desc: "Personalized pull-out accordion photo reel inside a luxury heart tin box.", image: "./assets/gift_9_photo_reel.png" },
+        { title: "Mini Heart Bear Gift Tin Set", desc: "Cute heart-shaped tin boxes with velvet bear keepsake & bow ribbon finish.", image: "./assets/gift_7_teddy_tins.jpg" },
+        { title: "Customized Baby Footprint LED Standee", desc: "Illuminated acrylic baby footprint birth detail standee with custom photo.", image: "./assets/gift_2.jpg" },
+        { title: "Heart Acrylic Keepsake Plaque", desc: "Gold embossed heart acrylic keepsake with couple names & date.", image: "./assets/gift_1.jpg" },
+        { title: "Customized Memory Photo Standee", desc: "Multi-photo acrylic Love table standee with collage frames.", image: "./assets/gift_5.jpg" },
+        { title: "Anniversary Calendar LED Light", desc: "Illuminated acrylic anniversary calendar plaque with custom photo window.", image: "./assets/gift_6.jpg" }
+      ],
+
+      frameStyles: [
+        { id: "gold-carved", name: "Customized Tribute & Wedding Table Frames", desc: "Ornate gold & brown carved table frames for special tributes & wedding celebrations.", borderStyle: "8px solid #D4AF37", boxShadow: "0 10px 30px rgba(212, 175, 55, 0.3)", image: "./assets/frame_1.jpg" },
+        { id: "gold-beaded", name: "With Love Wedding Portrait Frame", desc: "Tabletop wedding photo frame with temple backdrop & custom romantic typography.", borderStyle: "8px solid #D4AF37", boxShadow: "0 10px 30px rgba(212, 175, 55, 0.3)", image: "./assets/frame_2.jpg" },
+        { id: "wooden-classic", name: "Happy Wedding Life Temple Background Frame", desc: "Traditional wedding frame featuring temple gopuram background & golden embellishments.", borderStyle: "12px solid #3E2723", boxShadow: "0 10px 25px rgba(0,0,0,0.5)", image: "./assets/frame_3.jpg" },
+        { id: "textured-filigree", name: "Textured Filigree Wedding Frame", desc: "Embossed textured filigree border frame.", borderStyle: "8px solid #8B5A2B", boxShadow: "0 10px 25px rgba(0,0,0,0.5)", image: "./assets/frame_4.jpg" },
+        { id: "anniversary-swing", name: "Anniversary Swing Collage Frame", desc: "Handcrafted collage frame for wedding anniversary.", borderStyle: "8px solid #D4AF37", boxShadow: "0 10px 30px rgba(212, 175, 55, 0.3)", image: "./assets/frame_5.jpg", crop: true },
+        { id: "gold-filigree", name: "Gold Filigree Tabletop Frame", desc: "Handcrafted gold filigree tabletop frame.", borderStyle: "8px solid #D4AF37", boxShadow: "0 10px 30px rgba(212, 175, 55, 0.3)", image: "./assets/frame_6.jpg" }
+      ],
+
+      gallery: [
+        { id: 1, title: "Night Lights Bridal Portrait", category: "Weddings", image: "./assets/gallery_1.jpg", caption: "Bridal Photography & Ambient Lights" },
+        { id: 2, title: "Outdoor Palm Garden Couple", category: "Couples", image: "./assets/gallery_2.jpg", caption: "Outdoor & Nature Couple Shoot" },
+        { id: 3, title: "Traditional Couple Moment", category: "Weddings", image: "./assets/gallery_3.jpg", caption: "Candid Traditional Moment" },
+        { id: 4, title: "Royal Silk Bridal Portrait", category: "Weddings", image: "./assets/gallery_4.jpg", caption: "Traditional Bridal Saree & Jewelry" },
+        { id: 5, title: "Grand Wedding Stage Garland", category: "Weddings", image: "./assets/gallery_5.jpg", caption: "Stage Garland & Ceremony Coverage" },
+        { id: 6, title: "Twilight Beach Romantic Embrace", category: "Couples", image: "./assets/gallery_6.jpg", caption: "Pre-Wedding Twilight Beach Shoot" },
+        { id: 7, title: "Garden Bloom Couple Portrait", category: "Couples", image: "./assets/gallery_7.jpg", caption: "Pre-Wedding Garden Conceptual Shoot" },
+        { id: 8, title: "Joyful Couple Garden Pose", category: "Couples", image: "./assets/gallery_8.jpg", caption: "Pre-Wedding Joyful Moments" },
+        { id: 9, title: "Ocean Shore Romantic Moment", category: "Couples", image: "./assets/gallery_9.png", caption: "Pre-Wedding Seashore Romantic Shoot" },
+        { id: 10, title: "Beach Water Walk Couple", category: "Couples", image: "./assets/gallery_10.png", caption: "Pre-Wedding Beach Sunset Walk" },
+
+        { id: 11, title: "Royal Mandala Cutout Wedding Album", category: "Albums", image: "./assets/album_1.jpg", caption: "Wood-Carved Mandala Cutout Album" },
+        { id: 12, title: "Laser Engraved Wooden Badge Album", category: "Albums", image: "./assets/album_2.jpg", caption: "Wooden Badge Acrylic Photobook" },
+        { id: 13, title: "Ornate Gold Mandala Filigree Photobook", category: "Albums", image: "./assets/album_3.jpg", caption: "Gold Filigree Mandala Frame Album" },
+
+        { id: 17, title: "Customized Tribute & Wedding Table Frames", category: "Photo Frames", image: "./assets/frame_1.jpg", caption: "Ornate Gold & Brown Table Frames" },
+        { id: 18, title: "With Love Wedding Portrait Frame", category: "Photo Frames", image: "./assets/frame_2.jpg", caption: "Tabletop Temple Backdrop Frame" },
+        { id: 19, title: "Happy Wedding Life Temple Background Frame", category: "Photo Frames", image: "./assets/frame_3.jpg", caption: "Traditional Temple Gopuram Frame" },
+
+        { id: 20, title: "3D Desktop Couple Cutout Plaque", category: "Gifts", image: "./assets/gift_4.jpg", caption: "3D Desktop Cutout Plaque" },
+        { id: 21, title: "Our Love Story Acrylic Timeline LED Light", category: "Gifts", image: "./assets/gift_3.png", caption: "Illuminated Timeline LED Standee" },
+        { id: 22, title: "Illuminated Heart Acrylic LED Light Frame", category: "Gifts", image: "./assets/gift_8_heart_led.png", caption: "Heart-Shaped Custom Photo LED Light Standee" },
+        { id: 23, title: "Accordion Photo Reel Memory Heart Box", category: "Gifts", image: "./assets/gift_9_photo_reel.png", caption: "Customized Pull-Out Accordion Photo Reel Gift Box" },
+        { id: 24, title: "Mini Heart Bear Gift Tin Set", category: "Gifts", image: "./assets/gift_7_teddy_tins.jpg", caption: "Custom Heart Tin Box with Teddy Bear Keepsake" }
+      ],
+
+      googleReviews: {
+        url: "https://share.google/0Qtm5lABzubNdQEN2",
+        rating: 5.0,
+        totalCount: "230+",
+        badgeText: "5.0 ★★★★★ Google Rating • 230+ Reviews"
+      },
+
+      testimonials: [
+        { id: 1, name: "R. Karthikeyan & Divya", avatar: "K", avatarBg: "linear-gradient(135deg, #D4AF37 0%, #9A7B1C 100%)", location: "Ramanathapuram", category: "Weddings & Albums", event: "Grand Wedding Photography & Photobook", rating: 5, date: "Verified Google Review", likes: 24, comment: "We booked Sivam Digital Studio for our wedding photography and photobook album in Ramanathapuram. The output quality was absolutely stunning! Their candid capturing, album layout design with gold filigree finish, and quick delivery were remarkable. Best photography studio experience." },
+        { id: 2, name: "Suresh Kumar", avatar: "S", avatarBg: "linear-gradient(135deg, #3A7BD5 0%, #3A6073 100%)", location: "Kenikarai, Ramnad", category: "Customized Frames & Gifts", event: "Acrylic Photo Frame & LED Standee", rating: 5, date: "Verified Google Review", likes: 19, comment: "Ordered customized love story acrylic photo frame with LED light for my wife's birthday. Finishing was super neat and quality of photo printing is top notch. Very affordable price in Ramnad. Highly recommend Sivam Digital Frame Works!" },
+        { id: 3, name: "Anitha & Praveen", avatar: "A", avatarBg: "linear-gradient(135deg, #E55D87 0%, #5FC3E4 100%)", location: "Ramanathapuram", category: "Weddings & Albums", event: "Pre-Wedding & Reception Shoot", rating: 5, date: "Verified Google Review", likes: 31, comment: "Sivam Digital Studio captured our pre-wedding shoot and reception so beautifully! Team is extremely patient, friendly, and creative with poses. The flush mount synthetic HD wedding photobook came out like a royal memory collection." },
+        { id: 4, name: "Meenakshi Sundaram", avatar: "M", avatarBg: "linear-gradient(135deg, #11998e 0%, #38ef7d 100%)", location: "Devipattinam Road, Ramnad", category: "Studio & Frames", event: "Family Portrait & Table Frame Works", rating: 5, date: "Verified Google Review", likes: 16, comment: "Extremely satisfied with their professional studio service and frame works. The wooden carved frame and crystal finish prints were perfect. Over 5+ years of trust shines through their work. 5-star service!" }
+      ]
+    };
+
+    // Helper for rendering Lucide icons with fallback SVGs
+    const Icon = ({ name, size = 18, color, style = {} }) => {
+      useEffect(() => {
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+      }, [name]);
+
+      if (name === 'instagram' || name === 'Instagram') {
+        return (
+          <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke={color || "currentColor"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'middle', ...style }}>
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        );
+      }
+
+      if (name === 'whatsapp' || name === 'WhatsApp') {
+        return (
+          <svg viewBox="0 0 24 24" width={size} height={size} fill="none" stroke={color || "currentColor"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ display: 'inline-block', verticalAlign: 'middle', ...style }}>
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+        );
+      }
+
+      return <i data-lucide={name} style={{ width: size, height: size, color: color, display: 'inline-block', verticalAlign: 'middle', ...style }}></i>;
+    };
+
+    // NAVBAR COMPONENT
+    function Navbar({ onOpenBooking }) {
+      const [scrolled, setScrolled] = useState(false);
+      const [drawerOpen, setDrawerOpen] = useState(false);
+
+      useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 40);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      const navItems = [
+        { label: 'Home', href: '#home' },
+        { label: 'About Us', href: '#about' },
+        { label: 'Services', href: '#services' },
+        { label: 'Customized Gifts', href: '#gifts' },
+        { label: 'Frame Works', href: '#frames' },
+        { label: 'Album Making', href: '#album' },
+        { label: 'Gallery', href: '#gallery' },
+        { label: 'Reviews', href: '#testimonials' },
+        { label: 'Contact Us', href: '#contact' }
+      ];
+
+      const googleReviewsUrl = siteConfig.googleReviews?.url || "https://share.google/0Qtm5lABzubNdQEN2";
+
+      return (
+        <>
+          <div className="header-top-bar">
+            <div className="container top-bar-wrapper">
+              <div className="top-bar-left">
+                <span className="top-info-item">
+                  <Icon name="map-pin" size={12} color="#D4AF37" /> {siteConfig.contact.address}
+                </span>
+                <span className="top-divider">|</span>
+                <span className="top-info-item">
+                  <Icon name="clock" size={12} color="#D4AF37" /> Mon - Sun: 9:00 AM - 9:00 PM
+                </span>
+              </div>
+
+              <div className="top-bar-right">
+                <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="top-info-item rating-link">
+                  <Icon name="star" size={12} color="#D4AF37" />
+                  <span><strong>5.0 Star Rating</strong> (230+ Google Reviews)</span>
+                </a>
+                <span className="top-divider">|</span>
+                <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="top-info-item wa-top-link">
+                  <Icon name="message-square" size={12} color="#25D366" />
+                  <span>WhatsApp Quick Chat</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <header className={`header-sticky ${scrolled ? 'scrolled' : ''}`}>
+            <div className="container nav-wrapper">
+              <a href="#home" className="logo-brand">
+                <div className="logo-img-wrapper">
+                  <img src="./assets/logo.jpg" alt="Sivam Digital Studio & Frame Works" className="header-logo-img" />
+                </div>
+                <div className="logo-text">
+                  <span className="logo-title gradient-gold-text">SIVAM DIGITAL</span>
+                  <span className="logo-sub">STUDIO & FRAME WORKS</span>
+                </div>
+              </a>
+
+              <nav className="desktop-nav">
+                <ul className="nav-links">
+                  {navItems.map(item => (
+                    <li key={item.label}>
+                      <a href={item.href} className="nav-link">{item.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+
+              <div className="header-actions">
+                <a href={`tel:${siteConfig.contact.phoneRaw}`} className="phone-quick-btn">
+                  <Icon name="phone" size={15} />
+                  <span>{siteConfig.contact.phonePrimaryDisplay}</span>
+                </a>
+                <button className="btn btn-gold" onClick={() => onOpenBooking()}>
+                  <Icon name="calendar" size={15} />
+                  <span>Book Us Now</span>
+                </button>
+                <button className="hamburger-btn" onClick={() => setDrawerOpen(true)} aria-label="Open navigation menu">
+                  <Icon name="menu" size={24} />
+                </button>
+              </div>
+            </div>
+          </header>
+
+          <div className={`mobile-drawer-overlay ${drawerOpen ? 'open' : ''}`} onClick={() => setDrawerOpen(false)}></div>
+
+          <aside className={`mobile-drawer ${drawerOpen ? 'open' : ''}`}>
+            <div className="mobile-drawer-header">
+              <div className="logo-brand">
+                <div className="logo-img-wrapper">
+                  <img src="./assets/logo.jpg" alt="Sivam Digital" className="header-logo-img" />
+                </div>
+                <div className="logo-text">
+                  <span className="logo-title">SIVAM DIGITAL</span>
+                  <span className="logo-sub">STUDIO & FRAME WORKS</span>
+                </div>
+              </div>
+              <button className="hamburger-btn" onClick={() => setDrawerOpen(false)}>
+                <Icon name="x" size={24} />
+              </button>
+            </div>
+            <ul className="mobile-nav-links">
+              {navItems.map(item => (
+                <li key={item.label}>
+                  <a href={item.href} className="mobile-nav-link" onClick={() => setDrawerOpen(false)}>{item.label}</a>
+                </li>
+              ))}
+            </ul>
+            <div style={{ marginTop: 'auto', paddingTop: '1.5rem' }}>
+              <a href={`tel:${siteConfig.contact.phoneRaw}`} className="phone-quick-btn" style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+                <Icon name="phone" size={16} />
+                <span>{siteConfig.contact.phonePrimaryDisplay}</span>
+              </a>
+              <button className="btn btn-gold" style={{ width: '100%' }} onClick={() => { setDrawerOpen(false); onOpenBooking(); }}>
+                <Icon name="calendar" size={16} />
+                <span>Book Us Now</span>
+              </button>
+            </div>
+          </aside>
+        </>
+      );
+    }
+
+    // 1. HERO COMPONENT (#home)
+    function Hero({ onOpenBooking }) {
+      return (
+        <section id="home" className="hero-section">
+          <div className="hero-bg-container">
+            <img src="./assets/hero_wedding.jpg" alt="Sivam Digital Wedding Photography" className="hero-bg-img" />
+            <div className="hero-overlay"></div>
+          </div>
+
+          <div className="container hero-content reveal-up">
+            <div className="hero-top-badge">
+              <Icon name="sparkles" size={14} color="#D4AF37" />
+              <span>RAMANATHAPURAM'S PREMIER STUDIO & FRAME WORKS</span>
+            </div>
+            
+            <h1 className="hero-title">
+              Capture Your Moments. <br />
+              <span className="gradient-gold-text">Create Your Royalty Memories.</span>
+            </h1>
+
+            <div className="gold-accent-line"></div>
+
+            <p className="hero-subtitle">
+              Specialized in luxury wedding photography, flush mount synthetic HD album making, customized photo frames & personalized keepsake gifts with 5+ years of trust.
+            </p>
+
+            <div className="hero-feature-pills">
+              <div className="hero-pill"><Icon name="award" size={14} color="#D4AF37" /> 5+ Years Experience</div>
+              <div className="hero-pill"><Icon name="shield-check" size={14} color="#D4AF37" /> 1000+ Happy Weddings</div>
+              <div className="hero-pill"><Icon name="star" size={14} color="#D4AF37" /> 5.0 Google Rating (230+ Reviews)</div>
+            </div>
+
+            <div className="hero-cta-group" style={{ marginTop: '2rem' }}>
+              <button className="btn btn-gold" onClick={() => onOpenBooking()}>
+                <Icon name="calendar" size={18} />
+                <span>Book Your Date Now</span>
+              </button>
+
+              <a href="#services" className="btn btn-outline-gold">
+                <span>Explore Services & Gallery</span>
+                <Icon name="chevron-right" size={18} />
+              </a>
+
+              <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-dark" style={{ borderColor: 'rgba(37, 211, 102, 0.4)', color: '#25D366' }}>
+                <Icon name="message-square" size={18} />
+                <span>WhatsApp Quick Enquiry</span>
+              </a>
+            </div>
+
+            <div className="hero-contact-ribbon">
+              <span>Need instant phone consultation?</span>
+              <a href={`tel:${siteConfig.contact.phoneRaw}`} className="ribbon-phone-link">
+                <Icon name="phone" size={14} color="#D4AF37" /> {siteConfig.contact.phonePrimaryDisplay}
+              </a>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // 2. TRUST STATS & ABOUT COMPONENT (#about)
+    function TrustStats() {
+      const [counts, setCounts] = useState(siteConfig.stats.map(() => 0));
+      const sectionRef = useRef(null);
+      const [animated, setAnimated] = useState(false);
+
+      useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting && !animated) {
+            setAnimated(true);
+            siteConfig.stats.forEach((stat, idx) => {
+              let current = 0;
+              const step = stat.number / 30;
+              const timer = setInterval(() => {
+                current += step;
+                if (current >= stat.number) {
+                  current = stat.number;
+                  clearInterval(timer);
+                }
+                setCounts(prev => {
+                  const next = [...prev];
+                  next[idx] = Math.floor(current);
+                  return next;
+                });
+              }, 50);
+            });
+          }
+        }, { threshold: 0.2 });
+
+        if (sectionRef.current) observer.observe(sectionRef.current);
+        return () => observer.disconnect();
+      }, [animated]);
+
+      return (
+        <section ref={sectionRef} className="trust-stats-section">
+          <div className="container">
+            <div className="stats-grid">
+              {siteConfig.stats.map((stat, idx) => (
+                <div key={idx} className={`stat-item reveal-up delay-${(idx % 4) + 1}`}>
+                  <div className="stat-number">{counts[idx]}{stat.suffix}</div>
+                  <div className="stat-label">{stat.label}</div>
+                  <div className="stat-desc">{stat.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function AboutSection({ onOpenBooking }) {
+      return (
+        <section id="about" className="section-padding about-section">
+          <div className="container">
+            <div className="about-grid">
+              <div className="about-image-wrapper reveal-left">
+                <img src="./assets/about_portrait.jpg" alt="Sivam Digital Studio" className="about-img-main" />
+                <div className="about-badge-floating">
+                  <Icon name="award" size={28} color="#D4AF37" />
+                  <div className="about-badge-num">5+ YEARS</div>
+                  <div className="about-badge-text">In Album & Studio</div>
+                </div>
+              </div>
+
+              <div className="reveal-right">
+                <span className="section-label">ABOUT SIVAM DIGITAL</span>
+                <h2 className="section-title" style={{ color: '#121418' }}>More Than 5 Years of Creating Beautiful Memories</h2>
+                <p style={{ color: '#4A4850', marginBottom: '1.25rem', fontSize: '1.05rem', lineHeight: '1.7' }}>
+                  Sivam Digital Studio & Frame Works is a professionally experienced studio located at Kenikarai Bus Stop, Ramanathapuram. With more than 5 years of experience in photography, album making and frame works, we understand the importance of every special occasion.
+                </p>
+                <p style={{ color: '#4A4850', marginBottom: '1.5rem', fontSize: '1rem', lineHeight: '1.7' }}>
+                  From wedding memories and luxury photobook albums to customized gifts and beautifully crafted photo frames, we bring creativity, care and professional finishing to everything we do.
+                </p>
+
+                <div className="about-highlights">
+                  {siteConfig.highlights.map((h, i) => (
+                    <div key={i} className="about-pill">
+                      <Icon name="check-circle" size={14} color="#D4AF37" style={{ marginRight: '0.4rem' }} />
+                      {h.label}
+                    </div>
+                  ))}
+                </div>
+
+                <div style={{ marginTop: '2rem' }}>
+                  <button className="btn btn-gold" onClick={() => onOpenBooking()}>
+                    <span>Know More About Us</span>
+                    <Icon name="arrow-right" size={16} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function WhyChooseUs() {
+      return (
+        <section className="section-padding why-section">
+          <div className="container">
+            <div className="reveal-up" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+              <span className="section-label">THE SIVAM DIGITAL DIFFERENCE</span>
+              <h2 className="section-title">Why Choose Sivam Digital</h2>
+              <p className="section-subtitle">Uncompromising commitment to quality, creative flair, and personalized care for every milestone event in Ramanathapuram.</p>
+            </div>
+
+            <div className="why-grid">
+              {siteConfig.whyChooseUs.map((card, idx) => (
+                <div key={card.num} className={`why-card ${idx % 2 === 0 ? 'reveal-left' : 'reveal-right'} delay-${(idx % 3) + 1}`}>
+                  <div className="why-card-header">
+                    <div className="why-icon-box">
+                      <Icon name={card.icon || "sparkles"} size={26} />
+                    </div>
+                    <span className="why-number-watermark">{card.num}</span>
+                  </div>
+
+                  <h3 className="why-title gradient-gold-text">
+                    {card.title}
+                  </h3>
+
+                  <div className="why-accent-line"></div>
+
+                  <p className="why-desc">
+                    {card.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // 3. SERVICES SECTION (#services)
+    function ServicesSection({ onSelectService }) {
+      return (
+        <section id="services" className="section-padding services-section">
+          <div className="container">
+            <div className="reveal-up" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+              <span className="section-label">OUR EXPERTISE</span>
+              <h2 className="section-title">Our Services</h2>
+              <p className="section-subtitle">Everything you need to make your special moments unforgettable.</p>
+            </div>
+
+            <div className="services-grid">
+              {siteConfig.services.map((service, idx) => (
+                <div key={service.id} className={`service-card reveal-up delay-${(idx % 4) + 1}`}>
+                  <div className="service-img-wrapper">
+                    <img src={service.image} alt={service.title} className="service-img" loading="lazy" />
+                  </div>
+                  <div className="service-card-body">
+                    <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.15em', color: '#D4AF37', marginBottom: '0.4rem' }}>
+                      {service.category}
+                    </span>
+                    <h3 className="service-title">{service.title}</h3>
+                    <p className="service-desc">{service.description}</p>
+                    <button className="service-btn-link" onClick={() => onSelectService(service.title)}>
+                      <span>Explore Service</span>
+                      <Icon name="arrow-right" size={14} />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // 5. CUSTOMIZED GIFTS (#gifts)
+    function CustomizedGifts({ onSelectService }) {
+      return (
+        <section id="gifts" className="section-padding gifts-section">
+          <div className="container">
+            <div className="reveal-up" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+              <span className="section-label">MEMORIES INTO GIFTS</span>
+              <h2 className="section-title">Make Every Gift Personal</h2>
+              <p className="section-subtitle">Turn special memories into meaningful gifts. Perfect for weddings, anniversaries, birthdays and celebrations in Ramanathapuram.</p>
+            </div>
+
+            <div className="gifts-grid">
+              {siteConfig.customizedGiftsList.map((gift, idx) => (
+                <div key={idx} className={`gift-card reveal-up delay-${(idx % 3) + 1}`}>
+                  <div style={{ height: '300px', overflow: 'hidden', background: '#0D0F13', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0.5rem' }}>
+                    <img src={gift.image} alt={gift.title} style={{ maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto', objectFit: 'contain' }} loading="lazy" />
+                  </div>
+                  <div style={{ padding: '1.5rem' }}>
+                    <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{gift.title}</h3>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.25rem' }}>{gift.desc}</p>
+                    <button className="service-btn-link" onClick={() => onSelectService(gift.title)}>
+                      <span>Explore Customized Gifts</span>
+                      <Icon name="arrow-right" size={14} />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // 6. PHOTO FRAME VISUALIZER (#frames)
+    function PhotoFrameVisualizer({ onSelectService }) {
+      return (
+        <section id="frames" className="section-padding frame-visualizer-section">
+          <div className="container">
+            <div className="reveal-up" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+              <span className="section-label">CUSTOMIZED FRAMING</span>
+              <h2 className="section-title">Memories Deserve a Beautiful Frame</h2>
+              <p className="section-subtitle">Preserve your favorite moments beautifully with our customized photo frames.</p>
+            </div>
+
+            <div className="gifts-grid">
+              {siteConfig.frameStyles.map((frame, idx) => (
+                <div key={idx} className={`gift-card reveal-up delay-${(idx % 3) + 1}`}>
+                  <div style={{ height: '300px', overflow: 'hidden', background: '#0D0F13', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0.5rem' }}>
+                    <img
+                      src={frame.image}
+                      alt={frame.name}
+                      style={frame.crop ? { maxWidth: '100%', maxHeight: '100%', width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 40%', transform: 'scale(1.25)' } : { maxWidth: '100%', maxHeight: '100%', width: 'auto', height: 'auto', objectFit: 'contain' }}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div style={{ padding: '1.5rem' }}>
+                    <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{frame.name}</h3>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.25rem' }}>{frame.desc}</p>
+                    <button className="service-btn-link" onClick={() => onSelectService(`Custom Frame - ${frame.name}`)}>
+                      <span>Explore Photo Frame</span>
+                      <Icon name="arrow-right" size={14} />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // 7. ALBUM MAKING SECTION (#album)
+    function AlbumSection({ onSelectService }) {
+      const albumTypes = [
+        { title: "Royal Mandala Cutout Wedding Album", desc: "Handcrafted wood-carved mandala design with personalized acrylic couple portrait window & gold embossed dates.", image: "./assets/album_1.jpg" },
+        { title: "Laser Engraved Wooden Badge Album", desc: "Luxury lay-flat photobook featuring laser engraved wooden name plaque & crystal acrylic glass cover finish.", image: "./assets/album_2.jpg" },
+        { title: "Ornate Gold Mandala Filigree Photobook", desc: "Premium metallic gold filigree mandala frame with vibrant romantic cover display & heirloom leather box.", image: "./assets/album_3.jpg" },
+        { title: "Flush Mount Tan Leather Mandala Album", desc: "Genuine tan leather cover featuring intricate mandala embossing and center arch photo window.", image: "./assets/album_4.jpg" },
+        { title: "Geometric Mosaic Wood Inlay Album", desc: "Contemporary geometric wooden mosaic cutout cover with customized couple photo plaque & leather backing.", image: "./assets/album_5.jpg" },
+        { title: "Gold Hexagon Emblem Leather Photobook", desc: "Handcrafted leather & mandala wood cutout cover with gold hexagon engraved name emblem plaque & royal finish.", image: "./assets/album_6.jpg" }
+      ];
+
+      return (
+        <section id="album" className="section-padding beauty-section">
+          <div className="container">
+            <div className="reveal-up" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+              <span className="section-label" style={{ color: '#9A7B1C' }}>PREMIUM ALBUM DESIGN</span>
+              <h2 className="section-title" style={{ color: '#121418' }}>Luxury Wedding Album Making</h2>
+              <p style={{ color: '#55525B', maxWidth: '680px', margin: '0 auto' }}>
+                Transform your wedding photographs into timeless heirloom albums. Designed with HD non-tearable pages, handcrafted leather & glass covers, and metallic finishing.
+              </p>
+            </div>
+
+            <div className="beauty-cards-grid">
+              {albumTypes.map((album, idx) => (
+                <div key={idx} className={`beauty-card ${idx % 2 === 0 ? 'reveal-left' : 'reveal-right'} delay-${(idx % 3) + 1}`}>
+                  <div style={{ height: '180px', borderRadius: 'var(--radius-sm)', overflow: 'hidden', marginBottom: '1.25rem' }}>
+                    <img src={album.image} alt={album.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+                  </div>
+
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem' }}>
+                    <Icon name="book-open" size={20} color="#D4AF37" />
+                    <h3 style={{ fontSize: '1.2rem', fontFamily: 'var(--font-brand)', color: '#121418' }}>{album.title}</h3>
+                  </div>
+                  <p style={{ fontSize: '0.88rem', color: '#55525B', marginBottom: '1.5rem' }}>{album.desc}</p>
+                  <button className="btn btn-outline-gold" style={{ width: '100%', borderColor: '#D4AF37', color: '#121418' }} onClick={() => onSelectService(`Album: ${album.title}`)}>
+                    <Icon name="calendar" size={16} />
+                    <span>Enquire About {album.title}</span>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // 8. GALLERY SECTION (#gallery)
+    function Gallery({ onOpenLightbox }) {
+      const [activeFilter, setActiveFilter] = useState('All');
+      const filters = ['All', 'Weddings', 'Albums', 'Couples', 'Events', 'Gifts', 'Photo Frames'];
+      const filtered = activeFilter === 'All' ? siteConfig.gallery : siteConfig.gallery.filter(i => i.category === activeFilter);
+
+      return (
+        <section id="gallery" className="section-padding gallery-section">
+          <div className="container">
+            <div className="reveal-up" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+              <span className="section-label">VISUAL PORTFOLIO</span>
+              <h2 className="section-title">Our Work Gallery</h2>
+              <div className="filter-tabs">
+                {filters.map(f => (
+                  <button key={f} className={`filter-btn ${activeFilter === f ? 'active' : ''}`} onClick={() => setActiveFilter(f)}>{f}</button>
+                ))}
+              </div>
+            </div>
+
+            <div className="gallery-grid">
+              {filtered.map((item, idx) => (
+                <div key={item.id} className={`gallery-item reveal-up delay-${(idx % 4) + 1}`} onClick={() => onOpenLightbox(filtered, idx)}>
+                  <img src={item.image} alt={item.title} className="gallery-img" loading="lazy" />
+                  <div className="gallery-overlay">
+                    <div className="gallery-view-icon"><Icon name="eye" size={22} /></div>
+                    <h4 style={{ fontSize: '1.2rem', color: '#FFF' }}>{item.title}</h4>
+                    <p style={{ fontSize: '0.8rem', color: '#D4AF37' }}>{item.caption}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // LIGHTBOX MODAL
+    function LightboxModal({ images, index, onClose, onPrev, onNext }) {
+      if (index === null || !images || !images[index]) return null;
+      const current = images[index];
+
+      return (
+        <div className="lightbox-modal" onClick={onClose}>
+          <div className="lightbox-content" onClick={e => e.stopPropagation()}>
+            <button className="lightbox-close-btn" onClick={onClose}><Icon name="x" size={24} /></button>
+            <button className="lightbox-prev-btn" onClick={onPrev}><Icon name="chevron-left" size={24} /></button>
+            <button className="lightbox-next-btn" onClick={onNext}><Icon name="chevron-right" size={24} /></button>
+            <img src={current.image} alt={current.title} className="lightbox-img" />
+            <div className="lightbox-caption">
+              <h3>{current.title}</h3>
+              <p style={{ fontSize: '0.9rem', color: '#D4AF37' }}>{current.caption}</p>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    function Testimonials() {
+      const [activeCategory, setActiveCategory] = useState('All');
+      const [likesCount, setLikesCount] = useState(() => {
+        const initial = {};
+        siteConfig.testimonials.forEach(item => { initial[item.id] = item.likes || 15; });
+        return initial;
+      });
+      const [likedItems, setLikedItems] = useState({});
+
+      const categories = ['All', 'Weddings & Albums', 'Customized Frames & Gifts', 'Studio & Frames'];
+      const filteredTestimonials = activeCategory === 'All'
+        ? siteConfig.testimonials
+        : siteConfig.testimonials.filter(t => t.category === activeCategory);
+
+      const handleLike = (id) => {
+        setLikesCount(prev => ({ ...prev, [id]: likedItems[id] ? prev[id] - 1 : prev[id] + 1 }));
+        setLikedItems(prev => ({ ...prev, [id]: !prev[id] }));
+      };
+
+      const googleUrl = siteConfig.googleReviews?.url || "https://share.google/0Qtm5lABzubNdQEN2";
+
+      return (
+        <section className="section-padding testimonials-section" id="testimonials">
+          <div className="container">
+            <div className="reveal-up" style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+              <span className="section-label" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                <Icon name="sparkles" size={14} color="#D4AF37" /> VERIFIED CLIENT REVIEWS
+              </span>
+              <h2 className="section-title">Loved by Families across Ramanathapuram</h2>
+              <p className="section-subtitle">
+                Real experiences and 5-star Google reviews shared by our valued clients for wedding photography, luxury photobooks, and photo frame works.
+              </p>
+            </div>
+
+            <div className="google-review-banner">
+              <div className="google-banner-left">
+                <div className="google-g-badge">
+                  <svg viewBox="0 0 24 24" width="32" height="32">
+                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                  </svg>
+                </div>
+                <div>
+                  <div className="google-banner-score">
+                    <span className="score-num">5.0</span>
+                    <div className="star-rating inline-stars" style={{ color: '#D4AF37' }}>★★★★★</div>
+                  </div>
+                  <p className="google-banner-text">
+                    Based on <strong>230+ Google Reviews</strong> for Sivam Digital Studio & Frame Works
+                  </p>
+                </div>
+              </div>
+
+              <div className="google-banner-actions">
+                <a href={googleUrl} target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ fontSize: '0.88rem', padding: '0.75rem 1.4rem' }}>
+                  <span>View All Google Reviews</span>
+                  <Icon name="external-link" size={16} />
+                </a>
+                <a href={googleUrl} target="_blank" rel="noopener noreferrer" className="btn btn-outline-gold" style={{ fontSize: '0.88rem', padding: '0.75rem 1.4rem' }}>
+                  <span>Write a Review</span>
+                </a>
+              </div>
+            </div>
+
+            <div className="testimonial-filter-tabs">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`testimonial-filter-btn ${activeCategory === cat ? 'active' : ''}`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            <div className="testimonials-grid">
+              {filteredTestimonials.map((test, idx) => (
+                <div key={test.id} className={`testimonial-card-pro reveal-up delay-${(idx % 4) + 1}`}>
+                  <div className="t-card-header">
+                    <div className="t-author-box">
+                      <div className="t-avatar" style={{ background: test.avatarBg || 'var(--gold-gradient)' }}>
+                        {test.avatar}
+                      </div>
+                      <div>
+                        <div className="t-author-name">
+                          {test.name}
+                          <Icon name="check-circle-2" size={16} color="#4285F4" className="verified-icon" title="Verified Customer" />
+                        </div>
+                        <div className="t-author-location">
+                          <Icon name="map-pin" size={12} color="#D4AF37" /> {test.location}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="t-quote-icon">
+                      <Icon name="quote" size={24} color="#D4AF37" />
+                    </div>
+                  </div>
+
+                  <div className="t-rating-row">
+                    <div className="star-rating" style={{ color: '#D4AF37' }}>★★★★★</div>
+                    <span className="t-event-badge">{test.event}</span>
+                  </div>
+
+                  <p className="t-comment">"{test.comment}"</p>
+
+                  <div className="t-card-footer">
+                    <div className="t-source-tag">
+                      <span className="g-dot"></span>
+                      <span>{test.date}</span>
+                    </div>
+
+                    <button 
+                      onClick={() => handleLike(test.id)} 
+                      className={`t-like-btn ${likedItems[test.id] ? 'liked' : ''}`}
+                      title="Helpful Review"
+                    >
+                      <Icon name="thumbs-up" size={14} />
+                      <span>{likesCount[test.id]}</span>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ textAlign: 'center', marginTop: '3.5rem' }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', marginBottom: '1rem' }}>
+                Want to share your experience with Sivam Digital Studio & Frame Works?
+              </p>
+              <a href={googleUrl} target="_blank" rel="noopener noreferrer" className="btn btn-dark" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', borderColor: 'rgba(212, 175, 55, 0.3)' }}>
+                <span>Rate Us on Google Maps</span>
+                <Icon name="external-link" size={16} color="#D4AF37" />
+              </a>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function CTASection({ onOpenBooking }) {
+      return (
+        <section className="cta-banner-section">
+          <div className="container reveal-up" style={{ maxWidth: '800px' }}>
+            <span className="section-label">START YOUR JOURNEY</span>
+            <h2 className="section-title">Let's Create Something Beautiful Together</h2>
+            <p className="section-subtitle">Planning your wedding in Ramanathapuram, looking for luxury album making or searching for customized gifts? Talk to Sivam Digital today.</p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
+              <button className="btn btn-gold" onClick={() => onOpenBooking()}>
+                <Icon name="calendar" size={18} />
+                <span>Book Us Now</span>
+              </button>
+              <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-outline-gold">
+                <Icon name="message-square" size={18} />
+                <span>WhatsApp Us</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function ContactSection({ selectedService }) {
+      const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        eventType: selectedService || 'Wedding Photography',
+        eventDate: '',
+        location: '',
+        message: ''
+      });
+
+      const [submitted, setSubmitted] = useState(false);
+      const [errorMsg, setErrorMsg] = useState('');
+
+      const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+      };
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        if (!formData.name || !formData.phone) {
+          setErrorMsg('Please enter your full name and phone number.');
+          return;
+        }
+
+        setErrorMsg('');
+        setSubmitted(true);
+
+        const text = `👑 *NEW STUDIO ENQUIRY - SIVAM DIGITAL*%0A%0A` +
+          `👤 *Name:* ${encodeURIComponent(formData.name)}%0A` +
+          `📞 *Phone:* ${encodeURIComponent(formData.phone)}%0A` +
+          `📧 *Email:* ${encodeURIComponent(formData.email || 'N/A')}%0A` +
+          `📸 *Service:* ${encodeURIComponent(formData.eventType)}%0A` +
+          `📅 *Date:* ${encodeURIComponent(formData.eventDate || 'Flexible')}%0A` +
+          `📍 *Location:* ${encodeURIComponent(formData.location || 'Ramanathapuram')}%0A` +
+          `💬 *Details:* ${encodeURIComponent(formData.message || 'I would like to inquire about packages & date availability.')}`;
+
+        setTimeout(() => {
+          window.open(`https://wa.me/${siteConfig.contact.whatsappRaw}?text=${text}`, '_blank');
+        }, 800);
+      };
+
+      const googleMapsUrl = siteConfig.contact.googleMapsUrl || "https://maps.google.com/?q=Kenikarai+Bus+Stop+Ramanathapuram";
+
+      return (
+        <section id="contact" className="section-padding contact-section">
+          <div className="container">
+            <div className="reveal-up" style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+              <span className="section-label" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
+                <Icon name="sparkles" size={14} color="#D4AF37" /> STUDIO LOCATION & CONTACT
+              </span>
+              <h2 className="section-title">Connect with Sivam Digital</h2>
+              <p className="section-subtitle">
+                Located conveniently near Kenikarai Bus Stop, Ramanathapuram. Visit our studio for live photobook samples & frame works, or send us a message below.
+              </p>
+            </div>
+
+            <div className="contact-grid-pro">
+              <div className="contact-info-column reveal-left">
+                <div className="info-column-header">
+                  <span className="gold-sub-label">DIRECT CONTACT SUITE</span>
+                  <h3 className="info-main-heading">Visit Our Studio in Ramnad</h3>
+                  <p className="info-sub-text">
+                    Experience our luxury non-tearable synthetic photobooks, 3D desktop plaques & handcrafted wooden frames in person.
+                  </p>
+                </div>
+
+                <div className="pro-contact-cards-list">
+                  <div className="pro-info-card">
+                    <div className="pro-info-icon-box">
+                      <Icon name="map-pin" size={22} color="#D4AF37" />
+                    </div>
+                    <div className="pro-info-details">
+                      <div className="pro-info-title">Studio Address</div>
+                      <div className="pro-info-val">{siteConfig.contact.address}</div>
+                      <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="maps-quick-btn">
+                        <span>Get Directions on Google Maps</span>
+                        <Icon name="external-link" size={13} />
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="pro-info-card">
+                    <div className="pro-info-icon-box">
+                      <Icon name="phone" size={22} color="#D4AF37" />
+                    </div>
+                    <div className="pro-info-details">
+                      <div className="pro-info-title">Phone & Direct Hotlines</div>
+                      <div className="pro-phone-pills-row">
+                        <a href={`tel:${siteConfig.contact.phoneRaw}`} className="pro-phone-pill">
+                          <Icon name="phone" size={13} /> {siteConfig.contact.phonePrimaryDisplay}
+                        </a>
+                        <a href={`tel:${siteConfig.contact.phoneSecondaryRaw}`} className="pro-phone-pill">
+                          <Icon name="phone" size={13} /> {siteConfig.contact.phoneSecondaryDisplay}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pro-info-card">
+                    <div className="pro-info-icon-box" style={{ background: 'rgba(37, 211, 102, 0.12)', borderColor: 'rgba(37, 211, 102, 0.3)' }}>
+                      <Icon name="message-square" size={22} color="#25D366" />
+                    </div>
+                    <div className="pro-info-details">
+                      <div className="pro-info-title">WhatsApp & Digital Mail</div>
+                      <div className="pro-phone-pills-row">
+                        <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="pro-phone-pill wa-pill">
+                          <Icon name="message-square" size={13} /> Chat on WhatsApp
+                        </a>
+                        <a href={`mailto:${siteConfig.contact.email}`} className="pro-phone-pill email-pill">
+                          <Icon name="mail" size={13} /> {siteConfig.contact.email}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pro-info-card">
+                    <div className="pro-info-icon-box">
+                      <Icon name="clock" size={22} color="#D4AF37" />
+                    </div>
+                    <div className="pro-info-details">
+                      <div className="pro-info-title">Working Hours & Days</div>
+                      <div className="pro-info-val">
+                        {siteConfig.contact.workingHours}
+                        <span className="open-days-badge">Open 7 Days a Week</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="google-maps-banner-card">
+                  <div className="maps-banner-header">
+                    <div>
+                      <div className="maps-badge">
+                        <Icon name="award" size={14} color="#D4AF37" /> 5.0 STAR RATED STUDIO ON GOOGLE
+                      </div>
+                      <h4 className="maps-card-title">Sivam Digital Studio & Frame Works</h4>
+                      <p className="maps-card-sub">Kenikarai Bus Stop, Ramanathapuram</p>
+                    </div>
+                    <div className="maps-g-circle">G</div>
+                  </div>
+
+                  <div className="maps-card-footer">
+                    <span className="maps-rating-txt">★★★★★ (230+ Verified Reviews)</span>
+                    <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ fontSize: '0.82rem', padding: '0.55rem 1.1rem' }}>
+                      <Icon name="map" size={14} />
+                      <span>Open Maps Navigation</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="contact-form-card-pro reveal-right">
+                <div className="form-card-header">
+                  <div className="form-header-badge">
+                    <Icon name="sparkles" size={14} color="#D4AF37" /> INSTANT QUOTE & BOOKING
+                  </div>
+                  <h3 className="form-card-title">Send Us an Enquiry</h3>
+                  <p className="form-card-sub">Fill out the form below to receive pricing & package availability</p>
+                </div>
+
+                {submitted ? (
+                  <div className="contact-success-box">
+                    <div className="success-icon-ring">
+                      <Icon name="check-circle" size={52} color="#D4AF37" />
+                    </div>
+                    <h4 className="success-heading">Enquiry Sent Successfully!</h4>
+                    <p className="success-txt">
+                      Connecting you to <strong>Sivam Digital Studio & Frame Works</strong> on WhatsApp to confirm details...
+                    </p>
+                    <div className="success-actions-row">
+                      <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ width: '100%' }}>
+                        <Icon name="message-square" size={16} />
+                        <span>Open WhatsApp Chat</span>
+                      </a>
+                      <button className="btn btn-dark" onClick={() => setSubmitted(false)} style={{ width: '100%' }}>
+                        Send Another Enquiry
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} className="pro-contact-form">
+                    {errorMsg && (
+                      <div className="form-error-banner">
+                        {errorMsg}
+                      </div>
+                    )}
+
+                    <div className="form-group">
+                      <label className="pro-form-label">Full Name *</label>
+                      <div className="input-with-icon">
+                        <Icon name="user" size={18} color="#D4AF37" className="input-icon" />
+                        <input
+                          type="text"
+                          name="name"
+                          required
+                          placeholder="e.g. Karthikeyan R"
+                          className="form-input icon-padded"
+                          value={formData.name}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-grid-2col">
+                      <div className="form-group">
+                        <label className="pro-form-label">Phone Number *</label>
+                        <div className="input-with-icon">
+                          <Icon name="phone" size={18} color="#D4AF37" className="input-icon" />
+                          <input
+                            type="tel"
+                            name="phone"
+                            required
+                            placeholder="+91 81108 60283"
+                            className="form-input icon-padded"
+                            value={formData.phone}
+                            onChange={handleChange}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="form-group">
+                        <label className="pro-form-label">Email Address</label>
+                        <div className="input-with-icon">
+                          <Icon name="mail" size={18} color="#D4AF37" className="input-icon" />
+                          <input
+                            type="email"
+                            name="email"
+                            placeholder="sivamdigitalrmd@gmail.com"
+                            className="form-input icon-padded"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="form-grid-2col">
+                      <div className="form-group">
+                        <label className="pro-form-label">Service Type</label>
+                        <select
+                          name="eventType"
+                          className="form-select"
+                          value={formData.eventType}
+                          onChange={handleChange}
+                        >
+                          <option value="Wedding Photography">Wedding Photography</option>
+                          <option value="Luxury Album Making">Luxury Album Making</option>
+                          <option value="Customized Photo Frames">Customized Photo Frames</option>
+                          <option value="Customized Gifts">Customized Gifts</option>
+                          <option value="Pre-Wedding Shoot">Pre-Wedding Shoot</option>
+                          <option value="Traditional Photography">Traditional Photography</option>
+                          <option value="Wedding Videography">Wedding Videography</option>
+                          <option value="Invitation Making">Invitation Making</option>
+                          <option value="Professional Studio Services">Professional Studio Services</option>
+                        </select>
+                      </div>
+
+                      <div className="form-group">
+                        <label className="pro-form-label">Event Date</label>
+                        <div className="input-with-icon">
+                          <Icon name="calendar" size={18} color="#D4AF37" className="input-icon" />
+                          <input
+                            type="date"
+                            name="eventDate"
+                            className="form-input icon-padded"
+                            value={formData.eventDate}
+                            onChange={handleChange}
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="form-group">
+                      <label className="pro-form-label">Event Location / City</label>
+                      <div className="input-with-icon">
+                        <Icon name="map-pin" size={18} color="#D4AF37" className="input-icon" />
+                        <input
+                          type="text"
+                          name="location"
+                          placeholder="e.g. Ramanathapuram, Paramakudi, Rameswaram..."
+                          className="form-input icon-padded"
+                          value={formData.location}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="form-group">
+                      <label className="pro-form-label">Requirements / Special Message</label>
+                      <textarea
+                        name="message"
+                        rows="3"
+                        placeholder="Tell us about your wedding hall, dates, photobook preference, or frame size..."
+                        className="form-textarea"
+                        value={formData.message}
+                        onChange={handleChange}
+                      ></textarea>
+                    </div>
+
+                    <div className="form-trust-banner">
+                      <Icon name="shield-check" size={16} color="#34A853" />
+                      <span>100% Free Consultation • No Spam • Instant Response</span>
+                    </div>
+
+                    <div className="form-actions-row">
+                      <button type="submit" className="btn btn-gold" style={{ flex: 1.5, justifyContent: 'center' }}>
+                        <Icon name="send" size={16} />
+                        <span>Send Enquiry & Chat on WhatsApp</span>
+                      </button>
+
+                      <a href={`tel:${siteConfig.contact.phoneRaw}`} className="btn btn-outline-gold" style={{ flex: 1, justifyContent: 'center' }}>
+                        <Icon name="phone" size={16} />
+                        <span>Call Us Directly</span>
+                      </a>
+                    </div>
+                  </form>
+                )}
+              </div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    // FOOTER COMPONENT
+    function Footer() {
+      const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      const googleMapsUrl = siteConfig.contact.googleMapsUrl || "https://maps.google.com/?q=Kenikarai+Bus+Stop+Ramanathapuram";
+      const googleReviewsUrl = siteConfig.googleReviews?.url || "https://share.google/0Qtm5lABzubNdQEN2";
+
+      return (
+        <footer className="footer-main">
+          <div className="container">
+            <div className="footer-top-ribbon">
+              <div className="ribbon-trust-item">
+                <Icon name="star" size={18} color="#D4AF37" />
+                <span><strong>5.0 / 5.0 Rating</strong> on Google (230+ Reviews)</span>
+              </div>
+              <div className="ribbon-divider"></div>
+              <div className="ribbon-trust-item">
+                <Icon name="award" size={18} color="#D4AF37" />
+                <span><strong>1000+ Weddings</strong> Successfully Completed</span>
+              </div>
+              <div className="ribbon-divider"></div>
+              <div className="ribbon-trust-item">
+                <Icon name="shield-check" size={18} color="#D4AF37" />
+                <span><strong>5+ Years Legacy</strong> in Ramanathapuram</span>
+              </div>
+            </div>
+
+            <div className="footer-grid">
+              <div className="footer-brand-col">
+                <a href="#home" className="logo-brand" style={{ marginBottom: '1.25rem' }}>
+                  <div className="logo-img-wrapper">
+                    <img src="./assets/logo.jpg" alt="Sivam Digital Studio & Frame Works" className="header-logo-img" />
+                  </div>
+                  <div className="logo-text">
+                    <span className="logo-title gradient-gold-text">SIVAM DIGITAL</span>
+                    <span className="logo-sub">STUDIO & FRAME WORKS</span>
+                  </div>
+                </a>
+
+                <p className="footer-brand-desc">
+                  Ramanathapuram's premier destination for luxury wedding photography, non-tearable synthetic HD photobooks, handcrafted photo frames & personalized keepsakes.
+                </p>
+
+                <div className="footer-left-buttons-container">
+                  <a href={`tel:${siteConfig.contact.phoneRaw}`} className="pro-footer-btn phone-pro-btn">
+                    <div className="btn-icon-wrapper phone-bg">
+                      <Icon name="phone" size={18} color="#121418" />
+                    </div>
+                    <div className="btn-text-wrapper">
+                      <span className="btn-tag">DIRECT CALL HOTLINE</span>
+                      <span className="btn-title">{siteConfig.contact.phonePrimaryDisplay}</span>
+                    </div>
+                  </a>
+
+                  <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="pro-footer-btn wa-pro-btn">
+                    <div className="btn-icon-wrapper wa-bg">
+                      <Icon name="message-square" size={18} color="#FFF" />
+                    </div>
+                    <div className="btn-text-wrapper">
+                      <span className="btn-tag">INSTANT WHATSAPP</span>
+                      <span className="btn-title">Chat On WhatsApp</span>
+                    </div>
+                  </a>
+
+                  <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="pro-footer-btn insta-pro-btn">
+                    <div className="btn-icon-wrapper insta-bg">
+                      <Icon name="instagram" size={18} color="#FFF" />
+                    </div>
+                    <div className="btn-text-wrapper">
+                      <span className="btn-tag">INSTAGRAM PAGE</span>
+                      <span className="btn-title">@ramnad_gifts</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              <div>
+                <h4 className="footer-title">Quick Navigation</h4>
+                <ul className="footer-links">
+                  <li><a href="#home" className="footer-link">Home</a></li>
+                  <li><a href="#about" className="footer-link">About Us</a></li>
+                  <li><a href="#services" className="footer-link">Our Services</a></li>
+                  <li><a href="#gifts" className="footer-link">Customized Gifts</a></li>
+                  <li><a href="#frames" className="footer-link">Photo Frame Works</a></li>
+                  <li><a href="#album" className="footer-link">Luxury Album Making</a></li>
+                  <li><a href="#gallery" className="footer-link">Portfolio Gallery</a></li>
+                  <li><a href="#testimonials" className="footer-link">Client Reviews</a></li>
+                  <li><a href="#contact" className="footer-link">Contact & Location</a></li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="footer-title">Studio Services</h4>
+                <ul className="footer-links">
+                  <li><a href="#services" className="footer-link">Wedding Photography</a></li>
+                  <li><a href="#services" className="footer-link">Candid & Traditional Coverage</a></li>
+                  <li><a href="#album" className="footer-link">Flush Mount Leather Photobooks</a></li>
+                  <li><a href="#album" className="footer-link">Acrylic Glass Cover Albums</a></li>
+                  <li><a href="#frames" className="footer-link">Customized Photo Frames</a></li>
+                  <li><a href="#gifts" className="footer-link">3D Desktop Plaques & Standees</a></li>
+                  <li><a href="#services" className="footer-link">Pre-Wedding Shoots</a></li>
+                  <li><a href="#services" className="footer-link">Professional Studio Portraits</a></li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="footer-title">Studio Contact</h4>
+                <ul className="footer-contact-list">
+                  <li>
+                    <Icon name="map-pin" size={16} color="#D4AF37" className="f-icon" />
+                    <span>{siteConfig.contact.address}</span>
+                  </li>
+                  <li>
+                    <Icon name="phone" size={16} color="#D4AF37" className="f-icon" />
+                    <span>
+                      <a href={`tel:${siteConfig.contact.phoneRaw}`}>{siteConfig.contact.phonePrimaryDisplay}</a>
+                      <br />
+                      <a href={`tel:${siteConfig.contact.phoneSecondaryRaw}`}>{siteConfig.contact.phoneSecondaryDisplay}</a>
+                    </span>
+                  </li>
+                  <li>
+                    <Icon name="mail" size={16} color="#D4AF37" className="f-icon" />
+                    <a href={`mailto:${siteConfig.contact.email}`}>{siteConfig.contact.email}</a>
+                  </li>
+                </ul>
+
+                <div style={{ marginTop: '1.25rem' }}>
+                  <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ fontSize: '0.82rem', padding: '0.6rem 1.1rem', width: '100%', justifyContent: 'center' }}>
+                    <Icon name="map" size={14} />
+                    <span>Open Google Maps Directions</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="footer-bottom">
+              <div className="footer-bottom-copy">
+                &copy; 2026 <strong>{siteConfig.businessFullTitle}</strong>. All Rights Reserved.
+              </div>
+
+              <div className="footer-bottom-links">
+                <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" className="footer-b-link">
+                  Read Google Reviews
+                </a>
+                <span className="b-dot">•</span>
+                <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="footer-b-link">
+                  WhatsApp Support
+                </a>
+              </div>
+
+              <button onClick={scrollToTop} className="back-to-top-btn" title="Back to Top">
+                <Icon name="arrow-up" size={16} />
+                <span>Back to Top</span>
+              </button>
+            </div>
+          </div>
+        </footer>
+      );
+    }
+
+    // BOOKING MODAL (VIP STEP WIZARD)
+    function BookingModal({ isOpen, onClose, initialService }) {
+      const [step, setStep] = useState(1);
+      const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        service: initialService || 'Wedding Photography',
+        date: '',
+        location: '',
+        notes: ''
+      });
+      const [submitted, setSubmitted] = useState(false);
+
+      useEffect(() => {
+        if (initialService) setFormData(prev => ({ ...prev, service: initialService }));
+        setStep(1);
+        setSubmitted(false);
+      }, [initialService, isOpen]);
+
+      if (!isOpen) return null;
+
+      const servicesList = [
+        { id: 'Wedding Photography', title: 'Wedding Photography', icon: 'camera', desc: 'Complete candid & traditional coverage' },
+        { id: 'Luxury Album Making', title: 'Luxury Album Making', icon: 'book-open', desc: 'Flush mount leather & acrylic photobooks' },
+        { id: 'Customized Photo Frames', title: 'Photo Frame Works', icon: 'image', desc: 'Wooden carved & gold filigree frames' },
+        { id: 'Customized Gifts', title: 'Customized Gifts', icon: 'gift', desc: '3D plaques, LED standees & memory boxes' },
+        { id: 'Pre-Wedding Shoot', title: 'Pre-Wedding Shoot', icon: 'heart', desc: 'Outdoor garden & seashore shoots' },
+        { id: 'Professional Studio Services', title: 'Studio Services', icon: 'clock', desc: 'In-studio portraits & instant prints' }
+      ];
+
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        setSubmitted(true);
+        const msg = `👑 *NEW BOOKING ENQUIRY - SIVAM DIGITAL*%0A%0A` +
+          `👤 *Name:* ${encodeURIComponent(formData.name)}%0A` +
+          `📞 *Phone:* ${encodeURIComponent(formData.phone)}%0A` +
+          `📸 *Service Selected:* ${encodeURIComponent(formData.service)}%0A` +
+          `📅 *Event Date:* ${encodeURIComponent(formData.date || 'Flexible')}%0A` +
+          `📍 *Location:* ${encodeURIComponent(formData.location || 'Ramanathapuram')}%0A` +
+          `💬 *Notes:* ${encodeURIComponent(formData.notes || 'None')}`;
+        
+        setTimeout(() => {
+          window.open(`https://wa.me/${siteConfig.contact.whatsappRaw}?text=${msg}`, '_blank');
+        }, 800);
+      };
+
+      return (
+        <div className="modal-backdrop" onClick={onClose}>
+          <div className="booking-modal-card" onClick={e => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={onClose} aria-label="Close">
+              <Icon name="x" size={20} />
+            </button>
+
+            {submitted ? (
+              <div className="booking-success-view">
+                <div className="success-icon-wrap">
+                  <Icon name="check-circle" size={54} color="#D4AF37" />
+                </div>
+                <h3 className="success-title">Booking Request Initiated!</h3>
+                <p className="success-desc">
+                  Connecting you to <strong>Sivam Digital Studio & Frame Works</strong> on WhatsApp to confirm your date...
+                </p>
+                <div className="booking-summary-box">
+                  <div className="summary-row"><span>Service:</span><strong>{formData.service}</strong></div>
+                  <div className="summary-row"><span>Name:</span><strong>{formData.name}</strong></div>
+                  <div className="summary-row"><span>Date:</span><strong>{formData.date || 'Flexible Date'}</strong></div>
+                </div>
+                <div className="success-actions">
+                  <a href={`https://wa.me/${siteConfig.contact.whatsappRaw}`} target="_blank" rel="noopener noreferrer" className="btn btn-gold" style={{ width: '100%' }}>
+                    <Icon name="message-square" size={18} /><span>Open WhatsApp Now</span>
+                  </a>
+                  <button className="btn btn-dark" onClick={() => { setSubmitted(false); setStep(1); onClose(); }} style={{ width: '100%' }}>
+                    Close Window
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <div className="modal-header-box">
+                  <div className="modal-badge"><Icon name="sparkles" size={14} color="#D4AF37" /> VIP APPOINTMENT BOOKING</div>
+                  <h3 className="modal-main-title">Book Your Experience</h3>
+                  <p className="modal-sub-desc">Reserve your date with Ramanathapuram's trusted studio</p>
+                </div>
+
+                <div className="step-progress-bar">
+                  <div className={`step-pill ${step >= 1 ? 'active' : ''}`}><span className="step-num">1</span><span className="step-txt">Service</span></div>
+                  <div className="step-line"></div>
+                  <div className={`step-pill ${step >= 2 ? 'active' : ''}`}><span className="step-num">2</span><span className="step-txt">Details</span></div>
+                  <div className="step-line"></div>
+                  <div className={`step-pill ${step >= 3 ? 'active' : ''}`}><span className="step-num">3</span><span className="step-txt">Contact</span></div>
+                </div>
+
+                {step === 1 && (
+                  <div className="wizard-step-content">
+                    <label className="wizard-label">Choose Service Category *</label>
+                    <div className="services-selector-grid">
+                      {servicesList.map(item => {
+                        const isSelected = formData.service === item.id;
+                        return (
+                          <div key={item.id} onClick={() => setFormData({ ...formData, service: item.id })} className={`service-option-card ${isSelected ? 'selected' : ''}`}>
+                            <div className="option-icon-box"><Icon name={item.icon} size={20} color={isSelected ? '#121418' : '#D4AF37'} /></div>
+                            <div>
+                              <div className="option-title">{item.title}</div>
+                              <div className="option-desc">{item.desc}</div>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    <div className="wizard-footer">
+                      <button type="button" onClick={() => setStep(2)} className="btn btn-gold" style={{ width: '100%', justifyContent: 'center' }}>
+                        <span>Next: Event Date & Location</span><Icon name="arrow-right" size={18} />
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {step === 2 && (
+                  <div className="wizard-step-content">
+                    <div className="form-group">
+                      <label className="form-label">Event / Booking Date *</label>
+                      <input type="date" required className="form-input" value={formData.date} onChange={e => setFormData({ ...formData, date: e.target.value })} />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">Event Location / City</label>
+                      <input type="text" placeholder="e.g. Ramanathapuram, Paramakudi..." className="form-input" value={formData.location} onChange={e => setFormData({ ...formData, location: e.target.value })} />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">Special Requirements / Notes</label>
+                      <textarea rows="2" placeholder="Specific requirements..." className="form-textarea" value={formData.notes} onChange={e => setFormData({ ...formData, notes: e.target.value })}></textarea>
+                    </div>
+                    <div className="wizard-footer flex-row">
+                      <button type="button" onClick={() => setStep(1)} className="btn btn-dark" style={{ flex: 1 }}>
+                        <Icon name="arrow-left" size={16} /><span>Back</span>
+                      </button>
+                      <button type="button" onClick={() => setStep(3)} className="btn btn-gold" style={{ flex: 1.5 }}>
+                        <span>Next: Contact Info</span><Icon name="arrow-right" size={18} />
+                      </button>
+                    </div>
+                  </div>
+                )}
+
+                {step === 3 && (
+                  <form onSubmit={handleSubmit} className="wizard-step-content">
+                    <div className="form-group">
+                      <label className="form-label">Your Name *</label>
+                      <input type="text" required placeholder="Your Full Name" className="form-input" value={formData.name} onChange={e => setFormData({ ...formData, name: e.target.value })} />
+                    </div>
+                    <div className="form-group">
+                      <label className="form-label">Phone Number *</label>
+                      <input type="tel" required placeholder="+91 98765 43210" className="form-input" value={formData.phone} onChange={e => setFormData({ ...formData, phone: e.target.value })} />
+                    </div>
+                    <div className="trust-guarantee-pill">
+                      <Icon name="shield-check" size={18} color="#34A853" />
+                      <span>Free consultation • Instant date check • 5+ Years Trust</span>
+                    </div>
+                    <div className="wizard-footer flex-row">
+                      <button type="button" onClick={() => setStep(2)} className="btn btn-dark" style={{ flex: 1 }}>
+                        <Icon name="arrow-left" size={16} /><span>Back</span>
+                      </button>
+                      <button type="submit" className="btn btn-gold" style={{ flex: 1.8 }}>
+                        <Icon name="send" size={16} /><span>Confirm Booking</span>
+                      </button>
+                    </div>
+                  </form>
+                )}
+
+                <div className="modal-quick-call-footer">
+                  <span>Need instant discussion over phone?</span>
+                  <a href={`tel:${siteConfig.contact.phoneRaw}`} className="quick-call-link">
+                    <Icon name="phone" size={14} /> Call {siteConfig.contact.phonePrimaryDisplay}
+                  </a>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    // FLOATING ACTIONS
+    function FloatingActions({ onOpenBooking }) {
+      return (
+        <React.Fragment>
+          <div className="desktop-floating-actions">
+            <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="float-action-btn float-whatsapp" title="WhatsApp Chat">
+              <Icon name="message-square" size={24} />
+            </a>
+            <a href={`tel:${siteConfig.contact.phoneRaw}`} className="float-action-btn float-call" title="Call Sivam Digital">
+              <Icon name="phone" size={22} />
+            </a>
+          </div>
+
+          <div className="mobile-bottom-bar">
+            <div className="mobile-bar-actions">
+              <a href={`tel:${siteConfig.contact.phoneRaw}`} className="btn btn-dark" style={{ flex: 1, padding: '0.6rem' }}>
+                <Icon name="phone" size={14} /><span>Call</span>
+              </a>
+              <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-dark" style={{ flex: 1, padding: '0.6rem', color: '#25D366' }}>
+                <Icon name="message-square" size={14} /><span>WhatsApp</span>
+              </a>
+              <button className="btn btn-gold" style={{ flex: 1.2, padding: '0.6rem' }} onClick={() => onOpenBooking()}>
+                <Icon name="calendar" size={14} /><span>Book Now</span>
+              </button>
+            </div>
+          </div>
+        </React.Fragment>
+      );
+    }
+
+    // MAIN APP COMPONENT STRICTLY ALIGNED WITH HEADER MENU ORDER
+    function App() {
+      const [bookingOpen, setBookingOpen] = useState(false);
+      const [selectedService, setSelectedService] = useState('Wedding Photography');
+      const [lbImages, setLbImages] = useState([]);
+      const [lbIndex, setLbIndex] = useState(null);
+
+      const handleOpenBooking = (svc = 'Wedding Photography') => {
+        setSelectedService(svc);
+        setBookingOpen(true);
+      };
+
+      const handleOpenLightbox = (imgs, idx) => {
+        setLbImages(imgs);
+        setLbIndex(idx);
+      };
+
+      // INTERSECTION OBSERVER SCROLL-REVEAL SCRIPT
+      useEffect(() => {
+        const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+            }
+          });
+        }, { threshold: 0.12 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+        return () => revealObserver.disconnect();
+      }, []);
+
+      return (
+        <div>
+          <Navbar onOpenBooking={handleOpenBooking} />
+          <main>
+            {/* 1. Home (#home) */}
+            <Hero onOpenBooking={handleOpenBooking} />
+            
+            {/* 2. About Us (#about) */}
+            <TrustStats />
+            <AboutSection onOpenBooking={handleOpenBooking} />
+            <WhyChooseUs />
+
+            {/* 3. Services (#services) */}
+            <ServicesSection onSelectService={handleOpenBooking} />
+
+            {/* 5. Customized Gifts (#gifts) */}
+            <CustomizedGifts onSelectService={handleOpenBooking} />
+
+            {/* 6. Frame Works (#frames) */}
+            <PhotoFrameVisualizer onSelectService={handleOpenBooking} />
+
+            {/* 7. Album Making (#album) */}
+            <AlbumSection onSelectService={handleOpenBooking} />
+
+            {/* 8. Gallery (#gallery) */}
+            <Gallery onOpenLightbox={handleOpenLightbox} />
+
+            {/* 9. Contact Us (#contact) */}
+            <Testimonials />
+            <CTASection onOpenBooking={handleOpenBooking} />
+            <ContactSection selectedService={selectedService} />
+          </main>
+          <Footer />
+          <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} initialService={selectedService} />
+          <LightboxModal images={lbImages} index={lbIndex} onClose={() => setLbIndex(null)} onPrev={() => setLbIndex(prev => prev === 0 ? lbImages.length - 1 : prev - 1)} onNext={() => setLbIndex(prev => prev === lbImages.length - 1 ? 0 : prev + 1)} />
+          <FloatingActions onOpenBooking={handleOpenBooking} />
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
