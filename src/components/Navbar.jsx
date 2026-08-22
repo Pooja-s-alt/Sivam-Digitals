@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Menu, X, Calendar, Star, MapPin, Clock, MessageSquare } from 'lucide-react';
+import { Phone, Menu, X, Calendar, Star, MapPin, Clock, MessageSquare, Instagram } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
 export default function Navbar({ onOpenBooking }) {
@@ -58,6 +58,11 @@ export default function Navbar({ onOpenBooking }) {
             <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="top-info-item wa-top-link">
               <MessageSquare size={12} color="#25D366" />
               <span>WhatsApp Quick Chat</span>
+            </a>
+            <span className="top-divider">|</span>
+            <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="top-info-item insta-top-link" style={{ color: '#E1306C', fontWeight: 600 }}>
+              <Instagram size={12} color="#E1306C" />
+              <span>Instagram (@SIVAM_STUDIO_RMD)</span>
             </a>
           </div>
         </div>

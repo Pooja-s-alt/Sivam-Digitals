@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, MessageSquare, Calendar } from 'lucide-react';
+import { Phone, MessageSquare, Calendar, Instagram } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
 export default function FloatingActions({ onOpenBooking }) {
@@ -7,6 +7,17 @@ export default function FloatingActions({ onOpenBooking }) {
     <>
       {/* Desktop Floating Action Buttons */}
       <div className="desktop-floating-actions">
+        <a
+          href={siteConfig.social.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="float-action-btn float-insta"
+          title="Instagram Page"
+          style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: '#fff' }}
+        >
+          <Instagram size={22} color="#fff" />
+        </a>
+
         <a
           href={siteConfig.social.whatsapp}
           target="_blank"

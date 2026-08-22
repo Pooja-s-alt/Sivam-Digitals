@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Clock, MessageSquare, Send, CheckCircle2, Sparkles, ExternalLink, ShieldCheck, User, Calendar, Map, Award } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, MessageSquare, Send, CheckCircle2, Sparkles, ExternalLink, ShieldCheck, User, Calendar, Map, Award, Instagram } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 
 export default function ContactSection({ selectedService }) {
@@ -9,12 +9,13 @@ export default function ContactSection({ selectedService }) {
     email: '',
     eventType: selectedService || 'Wedding Photography',
     eventDate: '',
-    location: '',
+    location: 'Ramanathapuram',
     message: ''
   });
 
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const [submittedWaUrl, setSubmittedWaUrl] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -28,20 +29,31 @@ export default function ContactSection({ selectedService }) {
     }
 
     setErrorMsg('');
+
+    const rawMessage = 
+      `\uD83D\uDCF8 *SIVAM DIGITAL - NEW ENQUIRY* \uD83D\uDCF8\n\n` +
+      `\u2022 *Name:* ${formData.name}\n` +
+      `\u2022 *Phone:* ${formData.phone}\n` +
+      `\u2022 *Email:* ${formData.email || 'N/A'}\n` +
+      `\u2022 *Service:* ${formData.eventType}\n` +
+      `\u2022 *Event Date:* ${formData.eventDate || 'Flexible Date'}\n` +
+      `\u2022 *Location:* ${formData.location || 'Ramanathapuram'}\n` +
+      `\u2022 *Details:* ${formData.message || 'I would like to inquire about packages & date availability.'}\n\n` +
+      `\u2728 *Sent via Sivam Digital Website*`;
+
+    const waUrl = `https://api.whatsapp.com/send?phone=${siteConfig.contact.whatsappRaw}&text=${encodeURIComponent(rawMessage)}`;
+
+    setSubmittedWaUrl(waUrl);
     setSubmitted(true);
 
-    const text = `👑 *NEW STUDIO ENQUIRY - SIVAM DIGITAL*%0A%0A` +
-      `👤 *Name:* ${encodeURIComponent(formData.name)}%0A` +
-      `📞 *Phone:* ${encodeURIComponent(formData.phone)}%0A` +
-      `📧 *Email:* ${encodeURIComponent(formData.email || 'N/A')}%0A` +
-      `📸 *Service:* ${encodeURIComponent(formData.eventType)}%0A` +
-      `📅 *Date:* ${encodeURIComponent(formData.eventDate || 'Flexible')}%0A` +
-      `📍 *Location:* ${encodeURIComponent(formData.location || 'Ramanathapuram')}%0A` +
-      `💬 *Details:* ${encodeURIComponent(formData.message || 'I would like to inquire about packages & date availability.')}`;
-
-    setTimeout(() => {
-      window.open(`https://wa.me/${siteConfig.contact.whatsappRaw}?text=${text}`, '_blank');
-    }, 800);
+    try {
+      const win = window.open(waUrl, '_blank');
+      if (!win || win.closed || typeof win.closed === 'undefined') {
+        window.location.href = waUrl;
+      }
+    } catch (err) {
+      window.location.href = waUrl;
+    }
   };
 
   const googleMapsUrl = siteConfig.contact.googleMapsUrl || "https://maps.google.com/?q=Kenikarai+Bus+Stop+Ramanathapuram";
@@ -50,62 +62,47 @@ export default function ContactSection({ selectedService }) {
     <section id="contact" className="section-padding contact-section">
       <div className="container">
         {/* Section Header */}
-        <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-          <span className="section-label" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}>
-            <Sparkles size={14} color="#D4AF37" /> STUDIO LOCATION & CONTACT
-          </span>
-          <h2 className="section-title">Connect with Sivam Digital</h2>
+        <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <span className="section-label">GET IN TOUCH WITH US</span>
+          <h2 className="section-title">Visit Our Studio or Contact Us</h2>
           <p className="section-subtitle">
-            Located conveniently near Kenikarai Bus Stop, Ramanathapuram. Visit our studio for live photobook samples & frame works, or send us a message below.
+            Planning a wedding, milestone occasion, or custom frame work? Reach out to us for quick quotes & instant availability!
           </p>
         </div>
 
-        <div className="contact-grid-pro">
-          {/* Left Column: Ultra-Rich Studio Info & Google Maps Card */}
-          <div className="contact-info-column">
-            <div className="info-column-header">
-              <span className="gold-sub-label">DIRECT CONTACT SUITE</span>
-              <h3 className="info-main-heading">Visit Our Studio in Ramnad</h3>
-              <p className="info-sub-text">
-                Experience our luxury non-tearable synthetic photobooks, 3D desktop plaques & handcrafted wooden frames in person.
-              </p>
-            </div>
+        <div className="contact-grid">
+          {/* Left Column: Direct Contact Info & Maps */}
+          <div className="contact-info-col">
+            <h3 className="contact-block-title">Sivam Digital Studio Info</h3>
+            <p className="contact-block-desc">
+              Visit our main studio in Ramanathapuram or message us directly on WhatsApp & Instagram for immediate assistance.
+            </p>
 
-            {/* Info Cards List */}
-            <div className="pro-contact-cards-list">
-              {/* Studio Address Card */}
+            <div className="pro-info-cards-stack">
+              {/* Studio Location Card */}
               <div className="pro-info-card">
                 <div className="pro-info-icon-box">
                   <MapPin size={22} color="#D4AF37" />
                 </div>
                 <div className="pro-info-details">
-                  <div className="pro-info-title">Studio Address</div>
+                  <div className="pro-info-title">Main Studio Address</div>
                   <div className="pro-info-val">{siteConfig.contact.address}</div>
-                  <a
-                    href={googleMapsUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="maps-quick-btn"
-                  >
-                    <span>Get Directions on Google Maps</span>
-                    <ExternalLink size={13} />
+                  <a href={googleMapsUrl} target="_blank" rel="noopener noreferrer" className="pro-map-link">
+                    <Map size={13} /> Open in Google Maps <ExternalLink size={11} />
                   </a>
                 </div>
               </div>
 
-              {/* Phone & Hotline Card */}
+              {/* Phone Contacts Card */}
               <div className="pro-info-card">
                 <div className="pro-info-icon-box">
                   <Phone size={22} color="#D4AF37" />
                 </div>
                 <div className="pro-info-details">
-                  <div className="pro-info-title">Phone & Direct Hotlines</div>
+                  <div className="pro-info-title">Studio Phone Hotline</div>
                   <div className="pro-phone-pills-row">
                     <a href={`tel:${siteConfig.contact.phoneRaw}`} className="pro-phone-pill">
                       <Phone size={13} /> {siteConfig.contact.phonePrimaryDisplay}
-                    </a>
-                    <a href={`tel:${siteConfig.contact.phoneSecondaryRaw}`} className="pro-phone-pill">
-                      <Phone size={13} /> {siteConfig.contact.phoneSecondaryDisplay}
                     </a>
                   </div>
                 </div>
@@ -117,10 +114,13 @@ export default function ContactSection({ selectedService }) {
                   <MessageSquare size={22} color="#25D366" />
                 </div>
                 <div className="pro-info-details">
-                  <div className="pro-info-title">WhatsApp & Digital Mail</div>
-                  <div className="pro-phone-pills-row">
+                  <div className="pro-info-title">WhatsApp, Instagram & Email</div>
+                  <div className="pro-phone-pills-row" style={{ flexWrap: 'wrap', gap: '0.5rem' }}>
                     <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" className="pro-phone-pill wa-pill">
                       <MessageSquare size={13} /> Chat on WhatsApp
+                    </a>
+                    <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="pro-phone-pill insta-pill" style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: '#fff', border: 'none' }}>
+                      <Instagram size={13} color="#fff" /> Instagram (@SIVAM_STUDIO_RMD)
                     </a>
                     <a href={`mailto:${siteConfig.contact.email}`} className="pro-phone-pill email-pill">
                       <Mail size={13} /> {siteConfig.contact.email}
@@ -194,7 +194,7 @@ export default function ContactSection({ selectedService }) {
                 </p>
                 <div className="success-actions-row">
                   <a
-                    href={siteConfig.social.whatsapp}
+                    href={submittedWaUrl || siteConfig.social.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-gold"
@@ -341,9 +341,9 @@ export default function ContactSection({ selectedService }) {
 
                 {/* Form Buttons Row */}
                 <div className="form-actions-row">
-                  <button type="submit" className="btn btn-gold" style={{ flex: 1.5, justifyContent: 'center' }}>
-                    <Send size={16} />
-                    <span>Send Enquiry & Chat on WhatsApp</span>
+                  <button type="submit" className="btn btn-gold" style={{ flex: 1.5, justifyContent: 'center', background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)', color: '#FFF', borderColor: '#25D366' }}>
+                    <MessageSquare size={18} color="#FFF" />
+                    <span>Send Enquiry on WhatsApp</span>
                   </button>
 
                   <a

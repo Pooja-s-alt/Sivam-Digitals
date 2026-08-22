@@ -27,10 +27,10 @@ export const siteConfig = {
 
   // Social Links
   social: {
-    instagram: "https://www.instagram.com/ramnad_gifts?igsi=MWY3a3BqbndwMXZ4Ng==",
+    instagram: "https://www.instagram.com/sivam_studio_rmd/",
     facebook: "https://facebook.com/sivamdigital",
     youtube: "https://youtube.com/sivamdigital",
-    whatsapp: "https://wa.me/918110860283"
+    whatsapp: `https://api.whatsapp.com/send?phone=918110860283&text=${encodeURIComponent("Hello Sivam Digital Studio! \uD83D\uDCF8 I would like to enquire about your photography, album making & frame services. \u2728")}`
   },
 
   // Highlight Key Strengths
@@ -96,7 +96,7 @@ export const siteConfig = {
       title: "Wedding Videography",
       category: "Weddings",
       description: "Cinematic wedding films that recreate the romance, sound, and soul of your wedding day.",
-      image: "/assets/service_candid.jpg"
+      image: "/assets/service_wedding_video.jpg"
     },
     {
       id: "album-making",
@@ -157,24 +157,24 @@ export const siteConfig = {
   ],
 
   customizedGiftsList: [
-    { title: "Our Love Story Acrylic Timeline LED Light", desc: "Illuminated acrylic timeline frame featuring your love journey photos & milestone dates.", image: "/assets/gift_3.png" },
-    { title: "3D Desktop Couple Cutout Plaque", desc: "Personalized desktop 3D couple cutout plaque with solid wooden base.", image: "/assets/gift_4.jpg" },
-    { title: "Illuminated Heart Acrylic LED Light Frame", desc: "Custom illuminated heart acrylic photo frame with ambient color lights.", image: "/assets/gift_8_heart_led.png" },
-    { title: "Accordion Photo Reel Memory Heart Box", desc: "Personalized pull-out accordion photo reel inside a luxury heart tin box.", image: "/assets/gift_9_photo_reel.png" },
-    { title: "Mini Heart Bear Gift Tin Set", desc: "Cute heart-shaped tin boxes with velvet bear keepsake & bow ribbon finish.", image: "/assets/gift_7_teddy_tins.jpg" },
-    { title: "Customized Baby Footprint LED Standee", desc: "Illuminated acrylic baby footprint birth detail standee with custom photo.", image: "/assets/gift_2.jpg" },
-    { title: "Heart Acrylic Keepsake Plaque", desc: "Gold embossed heart acrylic keepsake with couple names & date.", image: "/assets/gift_1.jpg" },
-    { title: "Customized Memory Photo Standee", desc: "Multi-photo acrylic Love table standee with collage frames.", image: "/assets/gift_5.jpg" },
-    { title: "Anniversary Calendar LED Light", desc: "Illuminated acrylic anniversary calendar plaque with custom photo window.", image: "/assets/gift_6.jpg" }
+    { title: "3D Custom Photo Moon Lamp Night Light", desc: "Illuminated 3D photo printed moon globe lamp on elegant solid wooden stand.", image: "/assets/gift_moon_lamp.png" },
+    { title: "Multi-Photo Acrylic LOVE Tabletop Standee", desc: "High-gloss acrylic Love table standee featuring multiple photo collage frames.", image: "/assets/gift_love_standee.jpg" },
+    { title: "True Love Story 3D Acrylic Engraved LED Lamp", desc: "Custom engraved couple portrait acrylic light plaque with warm LED wooden base.", image: "/assets/gift_acrylic_couple_led.jpg" },
+    { title: "Our Love Story Acrylic Timeline LED Standee", desc: "Custom illuminated acrylic timeline plaque with your milestone love dates & photos.", image: "/assets/gift_acrylic_timeline.png" },
+    { title: "Custom Wooden Laser Engraved Photo Plaque", desc: "High-definition laser carved wooden plaque with personalized message & portrait.", image: "/assets/gift_wooden_engraved.jpg" },
+    { title: "Personalized Magic Color Changing Photo Mug", desc: "Custom printed ceramic magic mug that reveals your high-res photo when hot liquid is poured.", image: "/assets/gift_magic_mug.png" },
+    { title: "Red Velvet Fur Heart Photo Pillow Cushion", desc: "Soft plush red velvet heart cushion with vibrant central photo print.", image: "/assets/gift_fur_heart_cushion.png" },
+    { title: "3D Miniature Birthday LED Shadow Box Frame", desc: "Handcrafted 3D miniature birthday frame with LED lights, balloon arch & keepsake shelf.", image: "/assets/gift_3d_shadowbox.jpg" },
+    { title: "Heart Acrylic Keepsake Plaque", desc: "Gold embossed heart acrylic keepsake with couple names & date.", image: "/assets/gift_1.jpg" }
   ],
 
   frameStyles: [
     { id: "gold-carved", name: "Customized Tribute & Wedding Table Frames", desc: "Ornate gold & brown carved table frames for special tributes & wedding celebrations.", borderStyle: "8px solid #D4AF37", boxShadow: "0 10px 30px rgba(212, 175, 55, 0.3)", image: "/assets/frame_1.jpg" },
-    { id: "gold-beaded", name: "With Love Wedding Portrait Frame", desc: "Tabletop wedding photo frame with temple backdrop & custom romantic typography.", borderStyle: "8px solid #D4AF37", boxShadow: "0 10px 30px rgba(212, 175, 55, 0.3)", image: "/assets/frame_2.jpg" },
-    { id: "wooden-classic", name: "Happy Wedding Life Temple Background Frame", desc: "Traditional wedding frame featuring temple gopuram background & golden embellishments.", borderStyle: "12px solid #3E2723", boxShadow: "0 10px 25px rgba(0,0,0,0.5)", image: "/assets/frame_3.jpg" },
-    { id: "textured-filigree", name: "Textured Filigree Wedding Frame", desc: "Embossed textured filigree border frame.", borderStyle: "8px solid #8B5A2B", boxShadow: "0 10px 25px rgba(0,0,0,0.5)", image: "/assets/frame_4.jpg" },
-    { id: "anniversary-swing", name: "Anniversary Swing Collage Frame", desc: "Handcrafted collage frame for wedding anniversary.", borderStyle: "8px solid #D4AF37", boxShadow: "0 10px 30px rgba(212, 175, 55, 0.3)", image: "/assets/frame_5.jpg", crop: true },
-    { id: "gold-filigree", name: "Gold Filigree Tabletop Frame", desc: "Handcrafted gold filigree tabletop frame.", borderStyle: "8px solid #D4AF37", boxShadow: "0 10px 30px rgba(212, 175, 55, 0.3)", image: "/assets/frame_6.jpg" }
+    { id: "led-tribute", name: "Illuminated LED Tribute Memorial Frame", desc: "Custom memorial portrait frame with inner green & warm LED lighting and gold border.", borderStyle: "8px solid #3E2723", boxShadow: "0 10px 30px rgba(46, 125, 50, 0.3)", image: "/assets/frame_led_tribute.jpg" },
+    { id: "led-venkateswara", name: "3D Glowing LED Lord Venkateswara Temple Frame", desc: "Embossed gold filigree temple frame with vibrant green LED glowing deity idol.", borderStyle: "8px solid #D4AF37", boxShadow: "0 10px 30px rgba(212, 175, 55, 0.4)", image: "/assets/frame_led_venkateswara.jpg" },
+    { id: "collage-birthday", name: "Multi-Photo Collage Birthday Carved Frame", desc: "Ornate dark wood carved frame featuring multi-photo memory collage.", borderStyle: "8px solid #4A3525", boxShadow: "0 10px 25px rgba(0,0,0,0.5)", image: "/assets/frame_collage_birthday.jpg" },
+    { id: "acrylic-wall", name: "Premium Glass Acrylic Floating Wall Frame", desc: "Modern rimless acrylic floating glass wall mount frame for high-res portraits.", borderStyle: "4px solid rgba(255,255,255,0.4)", boxShadow: "0 15px 40px rgba(0,0,0,0.6)", image: "/assets/frame_acrylic_wall.png" },
+    { id: "islamic-kaaba", name: "Islamic Calligraphy & Kaaba Carved Frame", desc: "Luxury dark wood carved frame featuring gold & silver foil Quranic calligraphy & Kaaba.", borderStyle: "8px solid #3E2723", boxShadow: "0 10px 30px rgba(212, 175, 55, 0.25)", image: "/assets/frame_islamic_kaaba.jpg" }
   ],
 
   gallery: [
@@ -193,15 +193,13 @@ export const siteConfig = {
     { id: 12, title: "Laser Engraved Wooden Badge Album", category: "Albums", image: "/assets/album_2.jpg", caption: "Wooden Badge Acrylic Photobook" },
     { id: 13, title: "Ornate Gold Mandala Filigree Photobook", category: "Albums", image: "/assets/album_3.jpg", caption: "Gold Filigree Mandala Frame Album" },
 
-    { id: 17, title: "Customized Tribute & Wedding Table Frames", category: "Photo Frames", image: "/assets/frame_1.jpg", caption: "Ornate Gold & Brown Table Frames" },
-    { id: 18, title: "With Love Wedding Portrait Frame", category: "Photo Frames", image: "/assets/frame_2.jpg", caption: "Tabletop Temple Backdrop Frame" },
-    { id: 19, title: "Happy Wedding Life Temple Background Frame", category: "Photo Frames", image: "/assets/frame_3.jpg", caption: "Traditional Temple Gopuram Frame" },
+    { id: 17, title: "Illuminated LED Tribute Memorial Frame", category: "Photo Frames", image: "/assets/frame_led_tribute.jpg", caption: "Custom Inner Green & Warm LED Memorial Portrait Frame" },
+    { id: 18, title: "3D Glowing LED Lord Venkateswara Temple Frame", category: "Photo Frames", image: "/assets/frame_led_venkateswara.jpg", caption: "Embossed Gold Filigree Temple Gopuram Glowing LED Frame" },
+    { id: 19, title: "Premium Glass Acrylic Floating Wall Frame", category: "Photo Frames", image: "/assets/frame_acrylic_wall.png", caption: "Modern Rimless Acrylic Floating Glass Wall Mount Frame" },
 
-    { id: 20, title: "3D Desktop Couple Cutout Plaque", category: "Gifts", image: "/assets/gift_4.jpg", caption: "3D Desktop Cutout Plaque" },
-    { id: 21, title: "Our Love Story Acrylic Timeline LED Light", category: "Gifts", image: "/assets/gift_3.png", caption: "Illuminated Timeline LED Standee" },
-    { id: 22, title: "Illuminated Heart Acrylic LED Light Frame", category: "Gifts", image: "/assets/gift_8_heart_led.png", caption: "Heart-Shaped Custom Photo LED Light Standee" },
-    { id: 23, title: "Accordion Photo Reel Memory Heart Box", category: "Gifts", image: "/assets/gift_9_photo_reel.png", caption: "Customized Pull-Out Accordion Photo Reel Gift Box" },
-    { id: 24, title: "Mini Heart Bear Gift Tin Set", category: "Gifts", image: "/assets/gift_7_teddy_tins.jpg", caption: "Custom Heart Tin Box with Teddy Bear Keepsake" }
+    { id: 20, title: "Our Love Story Acrylic Timeline LED Standee", category: "Gifts", image: "/assets/gift_acrylic_timeline.png", caption: "Illuminated Acrylic Love Timeline Milestone Standee" },
+    { id: 21, title: "Custom Wooden Laser Engraved Photo Plaque", category: "Gifts", image: "/assets/gift_wooden_engraved.jpg", caption: "Laser Carved Solid Wooden Anniversary Portrait Plaque" },
+    { id: 22, title: "3D Custom Photo Moon Lamp Night Light", category: "Gifts", image: "/assets/gift_moon_lamp.png", caption: "Illuminated 3D Photo Printed Moon Globe Lamp on Wooden Stand" }
   ],
 
   googleReviews: {

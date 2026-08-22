@@ -84,7 +84,7 @@ export default function Footer() {
                 </div>
                 <div className="btn-text-wrapper">
                   <span className="btn-tag">INSTAGRAM PAGE</span>
-                  <span className="btn-title">@ramnad_gifts</span>
+                  <span className="btn-title">@SIVAM_STUDIO_RMD</span>
                 </div>
               </a>
             </div>

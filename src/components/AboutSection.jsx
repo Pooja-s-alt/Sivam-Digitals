@@ -10,8 +10,8 @@ export default function AboutSection({ onOpenBooking }) {
           {/* Left Column: Overlapping Studio Image */}
           <div className="about-image-wrapper">
             <img
-              src="/assets/service_studio.jpg"
-              alt="Sivam Digital Studio & Equipment"
+              src="./assets/studio_interior.jpg"
+              alt="Sivam Digital Studio Interior"
               className="about-img-main"
             />
             <div className="about-badge-floating">

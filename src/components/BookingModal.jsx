@@ -15,6 +15,7 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
     contactPreference: 'WhatsApp'
   });
   const [submitted, setSubmitted] = useState(false);
+  const [submittedWaUrl, setSubmittedWaUrl] = useState('');
 
   useEffect(() => {
     if (initialService) {
@@ -22,6 +23,7 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
     }
     setStep(1);
     setSubmitted(false);
+    setSubmittedWaUrl('');
   }, [initialService, isOpen]);
 
   if (!isOpen) return null;
@@ -37,20 +39,30 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const rawMessage = 
+      `\uD83D\uDCF8 *SIVAM DIGITAL - NEW BOOKING ENQUIRY* \uD83D\uDCF8\n\n` +
+      `\u2022 *Name:* ${formData.name}\n` +
+      `\u2022 *Phone:* ${formData.phone}\n` +
+      `\u2022 *Service Selected:* ${formData.service}\n` +
+      `\u2022 *Event Date:* ${formData.date || 'Flexible Date'}\n` +
+      `\u2022 *Location:* ${formData.location || 'Ramanathapuram'}\n` +
+      `\u2022 *Notes:* ${formData.notes || 'None'}\n\n` +
+      `\u2728 *Please confirm availability & pricing for my event!*`;
+
+    const waUrl = `https://api.whatsapp.com/send?phone=${siteConfig.contact.whatsappRaw}&text=${encodeURIComponent(rawMessage)}`;
+
+    setSubmittedWaUrl(waUrl);
     setSubmitted(true);
 
-    const msg = `👑 *NEW BOOKING ENQUIRY - SIVAM DIGITAL*%0A%0A` +
-      `👤 *Name:* ${encodeURIComponent(formData.name)}%0A` +
-      `📞 *Phone:* ${encodeURIComponent(formData.phone)}%0A` +
-      `📸 *Service Selected:* ${encodeURIComponent(formData.service)}%0A` +
-      `📅 *Event Date:* ${encodeURIComponent(formData.date || 'To be confirmed')}%0A` +
-      `📍 *Location:* ${encodeURIComponent(formData.location || 'Ramanathapuram')}%0A` +
-      `💬 *Notes:* ${encodeURIComponent(formData.notes || 'None')}%0A%0A` +
-      `Please confirm availability & pricing for my event!`;
-
-    setTimeout(() => {
-      window.open(`https://wa.me/${siteConfig.contact.whatsappRaw}?text=${msg}`, '_blank');
-    }, 800);
+    try {
+      const win = window.open(waUrl, '_blank');
+      if (!win || win.closed || typeof win.closed === 'undefined') {
+        window.location.href = waUrl;
+      }
+    } catch (err) {
+      window.location.href = waUrl;
+    }
   };
 
   return (
@@ -89,7 +101,7 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
 
             <div className="success-actions">
               <a
-                href={`https://wa.me/${siteConfig.contact.whatsappRaw}`}
+                href={submittedWaUrl || `https://api.whatsapp.com/send?phone=${siteConfig.contact.whatsappRaw}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-gold"
